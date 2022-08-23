@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/42e2e15d-f250-4f88-9f99-da1457a1ffd4/microsoft.web/sites/subscriptions/42e2e15d-f250-4f88-9f99-da1457a1ffd4/resourceGroups/N-RG/providers/Microsoft.Web/sites/feappservice",
+    "appService.deploySubpath": "."
+}

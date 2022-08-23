@@ -1,0 +1,46 @@
+<header class="p-3 bg-success text-dark  bg-opacity-5" style="width: 100%;">
+    <div class="container">
+      <div class=" text-center d-inline">
+        <h2> Result Management System <button id="homebtn" style="position: absolute; right: 5%;" class="btn btn-danger d-inline" (click)="homeFunc()"  > Home</button> </h2> 
+      </div>
+    </div>
+  </header>
+
+  <table style="width: 100%; text-align: center;" *ngIf="data.length">
+      <thead>
+          <tr>
+              <td style="width: 20%;">
+                  NAME :
+              </td>
+              <td style="width: 20%;">
+                  Roll No :
+              </td>
+              <td style="width: 20%;">
+                  D.O.B :
+              </td>
+              <td style="width: 20%;">
+                  Marks :
+              </td>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let items of data">
+            <td style="width: 20%">
+                {{items.rollno}}
+            </td>
+            <td style="width: 20%">
+                {{items.name}}
+            </td>
+            <td style="width: 20%">
+                {{items.dob}}
+            </td>
+            <td style="width: 20%">
+                {{items.marks}}
+            </td>
+        </tr>
+      </tbody>
+  </table>
+
+  <h3 *ngIf="!data.length"> No Result Found. Please Wait for the Update </h3>
+
+  

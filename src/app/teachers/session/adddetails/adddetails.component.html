@@ -1,0 +1,49 @@
+<div>
+
+    <header class="p-3 bg-success text-dark  bg-opacity-5" style="width: 100%;">
+        <div class="container">
+          <div class=" text-center d-inline">
+            <h2> Result Management System <button id="homebtn" style="position: absolute; right: 5%;" class="btn btn-danger d-inline" (click)="logoutFunc()"  > Logout</button> </h2> 
+          </div>
+        </div>
+      </header>
+
+    
+    <section class="vh-100 bg-dark" >
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-5 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                        <div class="card-body p-3 text-center">
+                            
+                            <h3 class="mb-3">ADD</h3>
+                            <p  class="text-danger"> {{errorMessage}}  </p> 
+                    <form [formGroup]="addForm" (ngSubmit)="addDetails()">
+                        <div class="form-outline mb-4">
+                            <input type="number" id="rollno" class="form-control form-control-lg" placeholder="Roll No" formControlName="rollno" required (click)="changeFunc()" />
+                        </div>
+                        
+                        <div class="form-outline mb-4">
+                            <input type="text" id="Tname" class="form-control form-control-lg"  placeholder="Name " formControlName="studentName" required (click)="changeFunc()"/>
+                        </div>
+            
+                        <div class="form-outline mb-4">
+                            <input type="text" id="dob" class="form-control form-control-lg" placeholder="D.O.B (dd-mm-yyyy)"  formControlName="dob" required (click)="changeFunc()"/>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="number" id="tID" class="form-control form-control-lg"  placeholder="Score " formControlName="marks" required (click)="changeFunc()"/>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-lg btn-block" type="submit" >Add Details </button>
+                    </form>
+                    <br>
+                      <a routerLink="../"[queryParams]="{id:id}" style="text-decoration: none;"> <button class="btn btn-danger btn-lg btn-block" >Cancel</button> </a> 
+                      <hr class="my-4">
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+</div>

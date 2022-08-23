@@ -1,0 +1,53 @@
+
+<div>
+   
+    <header class="p-3 bg-success text-dark  bg-opacity-5" style="width: 100%;">
+        <div class="container">
+          <div class=" text-center d-inline">
+            <h2> Result Management System <button id="homebtn" style="position: absolute; right: 5%;" class="btn btn-danger d-inline" (click)="logoutFunc()"  > Logout</button> </h2> 
+          </div>
+        </div>
+      </header>
+
+    <div class=" py-3" style="position: fixed; top: 10%; width: 100%;">
+        <div class="">
+                <a routerLink="add" [queryParams]="{id:id}"> <button class="btn btn-primary" style="position: fixed; right: 10%;" > Add Result </button> </a> 
+        </div>
+    </div>
+       <div class="text-center" style="position: fixed; top: 20%; width: 100%;">
+        <table style="width: 100%; border: 1px solid black;">
+            <thead style="border: 1px solid black">
+                <tr>
+                    <th style="width: 10%">Roll No.</th>
+                    <th style="width: 25%"> Name</th>
+                    <th style="width: 25%">Date Of Birth</th>
+                    <th style="width: 10%">Score</th>
+                    <th style="width: 30%">Actions</th>
+                </tr>
+            </thead>
+             <tbody>
+                
+                <tr *ngFor="let items of data">
+                    <td style="width: 10%">
+                        {{items.rollno}}
+                    </td>
+                    <td style="width: 25%">
+                        {{items.name}}
+                    </td>
+                    <td style="width: 25%">
+                        {{items.dob}}
+                    </td>
+                    <td style="width: 10%">
+                        {{items.marks}}
+                    </td>
+                    <td style="width: 30%">
+                        <a routerLink="update" [queryParams]="{id:id,sid:items.rollno,d:items.dob,m:items.marks,n:items.name}" style="text-decoration: none;">  <button class="btn btn-primary">Update</button> </a> 
+                        <button class="btn btn-danger" (click)="deleteDetails(items.rollno,id)">Delete</button>  
+                    </td>
+                </tr>
+                <!-- ngfor end -->
+            </tbody> 
+        </table>
+       </div>
+
+</div>
